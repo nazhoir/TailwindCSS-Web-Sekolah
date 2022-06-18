@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#dark-toggle:checked ~ label  div.toggle-circle {
+    @apply translate-x-3;
+}
+
+.under { 
+  @apply relative after:absolute after:inset-x-0 after:bottom-0 after:h-[2px] after:origin-right after:scale-x-0 after:bg-black dark:after:bg-white after:transition after:duration-200 hover:after:origin-left hover:after:scale-x-100
+}
+
+.aktif {
+  @apply relative after:absolute after:inset-x-0 after:bottom-0 after:h-[2px] after:bg-black dark:after:bg-white
+}
+
+.under-line::after {  
+  transform: scaleX(0);
+  width: 50%;
+  transform-origin: bottom right;
+}
+
+.under-line:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.under-line::after {
+  content: " ";
+  display: block;
+  border-bottom: 2px;
+  border-bottom-style: solid;
+  z-index: -1;
+  transition: transform .6s ease;
+}
+
+.under-line::after:active{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+@layer components {
+    .hamburger div:first-child {
+      @apply rotate-45 translate-y-1.5;
+    }
+    .hamburger div:last-child {
+      @apply -rotate-45 -translate-y-1;
+    }
+  }
+

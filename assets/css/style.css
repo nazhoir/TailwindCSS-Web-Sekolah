@@ -1,0 +1,20 @@
+@import url(slider.css);
+
+.under-line::after {  
+  transform: scaleX(0);
+  width: 50%;
+  transform-origin: bottom right;
+}
+
+.under-line:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.under-line::after {
+  content: " ";
+  display: block;
+  border-bottom: 2px;
+  border-bottom-style: solid;
+  z-index: -1;
+  transition: transform .6s ease;
+}
